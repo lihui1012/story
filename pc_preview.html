@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<link rel="stylesheet" href="css/pc.css" />
+		<link rel="stylesheet" href="css/mobiscroll_date.css" />
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/mobiscroll_date.js" charset="gb2312"></script>
+		<script src="js/mobiscroll.js"></script>
+	</head>
+	<body class="preview_works">
+		<div class="header"></div>
+		<div class="container">
+			<div class="information">
+				<div class="information_top clearfix">
+					<button class="fl"><a href="javascript:;">点击书名阅读原版小说</a></button>
+					<p class="fr" dir="rtl"><span>001</span><a href="javascript:;">سابقة تلك القصص</a></p>
+				</div>
+				<div class="information_middle clearfix">
+					<div class="author_msg fl">
+						<div class="author_photo">
+							<img src="img/photo.png"  />
+						</div>
+						<p class="clearfix">
+							<span class="fl">序&nbsp;&nbsp;&nbsp;号:</span>
+							<span class="fl">005</span>
+						</p>
+						<p class="clearfix">
+							<span class="fl">作品名:</span>
+							<span class="fl">地球求生指南</span>
+						</p>
+						<p class="clearfix">
+							<span class="fl">译&nbsp;&nbsp;&nbsp;者:</span>
+							<span class="fl">小牧童</span>
+						</p>
+						<p class="clearfix">
+							<span class="fl">学&nbsp;&nbsp;&nbsp;校:</span>
+							<span class="fl">北京外国语大学</span>
+						</p>
+					</div>
+					<div class="works fl">
+						<div class="article">
+							第一章   重建三十三重天
+清晨阳光洒落，孕育着万物。一抹晨曦像个调皮的孩子，钻入某小旅馆简陋的房间，在一位孤独青年身上游弋。
+孤独属性：无房无车无权无钱，无颜值无身高无事业无女友的孤儿，隐藏属性+2，一言以蔽之，离高富帅距离有点远。
+“嗯哼……”青年睡梦中舒服地伸了个懒腰，忽然，眼前一亮，一个遮天蔽日的九彩轮盘悬挂天空，身形之大，比之游乐场的摩天轮更胜数筹。
+他揉了揉眼睛，始终不敢相信眼前玄幻的一幕，这是白日做梦的幻觉？还是咸鱼翻身的奇遇？
+这时，床边仿佛有一个声音在耳边叮咛：“快转动这个摩天轮！”
+随之，脑海中浮现一股信息，根据指引，青年下意识的就去转动摩天轮……
+同时，整个世界天南海北，四面八方，无数身怀各种强大属性的男女，纷纷转动同样的一个九彩摩天轮盘。
+摩天轮盘分内外两圈，内圆分四象，外环分八方。各有一个图案隐含其上，只是迷雾重重，不得看清。
+“轰——”宛若整个宇宙都在颤抖，厚实的大地也如同海水一样软绵绵荡起波
+						</div>
+						<p class="clearfix">
+							<button class="fl"><a href="javascript:;">返回修改</a></button>
+							<input type="submit" value="提交" class="fl" />
+							<span class="fl">提示：一旦提交不可更改！</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<p><img src="img/thats_logo.png" />China Intercontinental Press</p>
+			<p dir="rtl">
+جمعية البحوث في الأدب العري التابع للاتحاد الصيني لدراسة الآداب الأجنية 
+</p>
+			<p><img src="img/bj_logo.png" />Beijing Foreign Studies University</p>
+		</div>
+	</body>
+</html>
+<script src="js/base.js"></script>
+<script>
+	$(function () {
+	var currYear = (new Date()).getFullYear();	
+	var opt={};
+	opt.date = {preset : 'date'};
+	opt.datetime = {preset : 'datetime'};
+	opt.time = {preset : 'time'};
+	opt.default = {
+		theme: 'android-ics light', //皮肤样式
+		display: 'modal', //显示方式 
+		mode: 'scroller', //日期选择模式
+		dateFormat: 'yyyy-mm-dd',
+		lang: 'zh',
+		showNow: true,
+		startYear: currYear - 50, //开始年份
+		endYear: currYear + 10 //结束年份
+	};
+
+	$("#USER_AGE").mobiscroll($.extend(opt['date'], opt['default']));
+	$("#USER_AGE").focus(function(){
+		$(".dwwl0 .dwl").html("年")
+		$(".dwwl1 .dwl").html("月")
+		$(".dwwl2 .dwl").html("日")
+		$(".dwb-s .dwb").html("确定")
+		$(".dwb-c .dwb").html("取消")
+		$(".dwb-n").remove()
+		$("input").removeAttr("disabled")
+		$(".dw-modal").hide()
+		
+	})
+	$("#USER_AGE").click(function(){
+		$(".dw-modal").show()
+		
+	})
+});
+</script>
